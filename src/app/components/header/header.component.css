@@ -1,0 +1,51 @@
+header,
+.header-left {
+  background-color: var(--theme1-header-clr);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  justify-content: space-between;
+}
+
+.logo-holder {
+  height: var(--header-height);
+  padding: 1dvh;
+  margin: 0 var(--h-space-small) 0 0;
+  align-content: center;
+}
+
+.logo-img {
+  aspect-ratio: 1;
+  height: 100%;
+  fill: whitesmoke;
+}
+
+.header-opts-holder {
+  display: flex;
+  height: var(--header-height);
+}
+
+.header-options {
+  display: flex;
+  padding: 0 2rem;
+  font-size: clamp(.8rem, 1.6dvh, 2dvh); 
+  font-family: sans-serif;
+  font-family: var(--theme1-header-item-font);
+  text-transform: uppercase;
+  color: var(--theme1-font-white-clr);
+  background-color: var(--theme1-red-clr);
+  text-decoration: none;
+  align-items: center;
+}
+
+a > span{
+  margin: 0 0 0 var(--h-space-tiny);
+}
+
+@media (hover: hover) {
+  /* when hover is supported */
+  .header-options:hover {
+    color: white;
+    background: black;
+  }
+}

@@ -1,0 +1,7 @@
+h3{
+    text-align: center;
+}
+
+h3::after{
+    content: "Made by Destiny♥";
+}

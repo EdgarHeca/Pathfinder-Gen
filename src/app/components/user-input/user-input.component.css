@@ -1,0 +1,99 @@
+.content {
+  margin: 4dvh var(--h-space-small) 0 var(--h-space-small);
+  font-family: var(--theme1-body-font);
+  text-transform: uppercase;
+}
+
+.user-input {
+  margin: 4dvh 0 0 0;
+  font-family: var(--theme1-body-font);
+  text-transform: uppercase;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: var(--h-space-regular);
+}
+
+.us-in-col1-el:nth-child(n + 2) {
+  margin: var(--v-space-tiny) 0 0 0;
+}
+
+.user-input-col1 {
+  display: grid;
+  grid-auto-rows: minmax(min-content, auto);
+}
+
+.us-in-col1-one {
+  grid-row: 1;
+}
+
+.us-in-col1-two {
+  grid-row: 2;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.us-in-col1-three {
+  grid-row: 3;
+  display: flex;
+  gap: var(--h-space-small);
+  flex-wrap: wrap;
+}
+
+.us-in-col1-four {
+  justify-self: center;
+  width: 100%;
+}
+
+.entry-type1 {
+  width: fit-content;
+}
+
+.form-label {
+  margin: 0 2rem 0 0;
+}
+
+.gicon-btm{
+  color: var(--theme1-font-white-clr);
+  padding: 1px 1px 1px 0;
+  border-radius: 50px;
+}
+
+.us-in-select {
+  width: clamp(
+    var(--h-space-tiny),
+    fit-content,
+    var(--h-space-regular)
+  );
+}
+
+div > .green-button{
+  margin: 0 0 0 var(--h-space-tiny);
+}
+
+.gen-name-button{
+  border-radius: 40px;
+  padding: 1px 1px;
+}
+
+.green-button{
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+  color: var(--theme1-font-white-clr);
+  background-color: var(--theme1-green-clr);
+}
+
+.gen-button {
+  padding: var(--v-space-tiny) var(--h-space-small);
+  border-radius: 0;
+  width: 100%;
+}
+@media (hover: hover) {
+  /* when hover is supported */
+  .green-button:hover {
+    color: white;
+    background: var(--theme1-red-clr);
+  }
+}

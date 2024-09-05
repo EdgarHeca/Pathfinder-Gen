@@ -1,0 +1,118 @@
+:root {
+  --theme1-header-item-font: "Inter", sans-serif;
+  --theme1-body-font: "Rajdhani", sans-serif;
+  --theme1-green-clr: oklch(26.13% 0.053 161.42);
+  --theme1-red-clr: oklch(33.26% 0.102 25.99);
+  --theme1-blue-clr: oklch(32.14% 0.13 266.58);
+  --theme1-platinum-clr: oklch(61.77% 0.038 269.06);
+  --theme1-gold-clr: oklch(70.86% 0.122 103.1);
+  --theme1-silver-clr: oklch(70.5% 0.015 226.65);
+  --theme1-copper-clr: oklch(54.49% 0.096 61.23);
+  --theme1-header-clr: var(--theme1-green-clr);
+  --theme1-font-white-clr: oklch(88.53% 0 0);
+
+  --font-base: 1.25rem;
+  --font-scale: 1;
+  --lg: calc(var(--h1) * var(--font-scale));
+  --h1: calc(var(--h2) * var(--font-scale));
+  --h2: calc(var(--h3) * var(--font-scale));
+  --h3: calc(var(--h4) * var(--font-scale));
+  --h4: calc(var(--h5) * var(--font-scale));
+  --h5: calc(var(--h6) * var(--font-scale));
+  --h6: var(--font-base);
+
+  --header-height: 6dvh;
+
+  --v-space-tiny: 1dvh;
+  --v-space-small: 2dvh;
+  --v-space-regular: 4dvh;
+  --v-space-big: 6dvh;
+  --v-space-huge: 8dvh;
+
+  --h-space-tiny: 1dvw;
+  --h-space-small: 2dvw;
+  --h-space-regular: 4dvw;
+  --h-space-big: 6dvw;
+  --h-space-huge: 8dvw;
+}
+
+@font-face {
+  font-family: "Pf2e";
+  src: url(../assets/fonts/Pathfinder2eActions.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+app-root {
+  display: block;
+  margin: 0px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.gicon-btm {
+  vertical-align: middle;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+
+.pf-icon {
+  font-family: "Pf2e", sans-serif;
+  font-size: 1.2rem;
+}

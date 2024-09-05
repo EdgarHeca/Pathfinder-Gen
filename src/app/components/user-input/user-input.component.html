@@ -1,0 +1,92 @@
+<div class="content">
+  @for (name of names; track $index){
+  <h1>{{ name }}</h1>
+  } 
+  @for (lastname of lastnames; track $index){
+  <h1>{{ lastname }}</h1>
+  }
+  <section class="user-input">
+    <div class="user-input-col1">
+      <div class="us-in-col1-el us-in-col1-one">
+        <div class="entry-type1">
+          <label class="user form-label" for="char-name">
+            Character name
+          </label>
+          <input type="text" id="char-name" />
+          <button class="green-button gen-name-button">
+            <span class="material-symbols-outlined gicon-btm"> autorenew </span>
+          </button>
+        </div>
+      </div>
+      <div class="us-in-col1-el us-in-col1-two">
+        <div class="entry-type1">
+          <label class="user form-label" for="char-name"> Level </label>
+          <select name="char-name" id="char-name" class="us-in-select">
+            <option value="default">----</option>
+            <option *ngFor="let level of levels" [value]="level">
+              {{ level }}
+            </option>
+          </select>
+        </div>
+        <div class="entry-type1">
+          <label class="user form-label" for="char-name"> Class </label>
+          <select name="char-name" id="char-name" class="us-in-select">
+            <option value="default">----</option>
+            <option *ngFor="let class of classes" [value]="class">
+              {{ class }}
+            </option>
+          </select>
+        </div>
+        <div class="entry-type1">
+          <label class="user form-label" for="char-name"> Ancestry </label>
+          <select name="char-name" id="char-name" class="us-in-select">
+            <option value="default">----</option>
+            <option *ngFor="let ancestry of ancestries" [value]="ancestry">
+              {{ ancestry }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="us-in-col1-el us-in-col1-three">
+        <div class="entry-type1">
+          <label class="user form-label" for="uncAncestry">
+            Uncommon ancestries
+          </label>
+          <input
+            (change)="uncAncChecked()"
+            type="checkbox"
+            name="uncAncestry"
+            id="uncAncestry"
+          />
+        </div>
+        <div class="entry-type1">
+          <label class="user form-label" for="rarAncestry">
+            Rare ancestries
+          </label>
+          <input
+            (change)="rareAncChecked()"
+            type="checkbox"
+            name="rarAncestry"
+            id="rarAncestry"
+          />
+        </div>
+        <div class="entry-type1">
+          <label class="user form-label" for="char-name"> PC-style </label>
+          <input type="checkbox" name="char-name" id="char-name" />
+        </div>
+      </div>
+      <div class="us-in-col1-el us-in-col1-four">
+        <button (click)="printArray()" class="green-button gen-button">
+          Generate
+        </button>
+      </div>
+    </div>
+    <div class="user-input-col2">
+      <div class="us-in-col1-el us-in-col1-four">
+        <button class="green-button gen-button">
+          Export Character to FoundryVTT
+        </button>
+      </div>
+    </div>
+  </section>
+</div>
