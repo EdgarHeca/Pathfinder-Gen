@@ -16,8 +16,16 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  getNames() {
-    return this.http.get<Name[]>(`${this.apiUrl}/names`);
+  getFemaleNames() {
+    return this.http.get<Name[]>(`${this.apiUrl}/female-names`);
+  }
+
+  getMaleNames() {
+    return this.http.get<Name[]>(`${this.apiUrl}/male-names`);
+  }
+
+  getNonbinNames() {
+    return this.http.get<Name[]>(`${this.apiUrl}/nonbin-names`);
   }
 
   getLastNames() {

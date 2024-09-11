@@ -51,6 +51,7 @@
 
 .form-label {
   margin: 0 2rem 0 0;
+  vertical-align: center;
 }
 
 .gicon-btm{
@@ -90,6 +91,23 @@ div > .green-button{
   border-radius: 0;
   width: 100%;
 }
+
+.char-name-row{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  & .radio-holder{
+    margin: var(--v-space-tiny) 0 0 0;
+
+    & .form-label:not(:first-child){
+      padding: 0 0 0 0.4rem;
+    }
+  }
+}
+
+
+
 @media (hover: hover) {
   /* when hover is supported */
   .green-button:hover {

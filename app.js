@@ -2,7 +2,9 @@ import express from "express";
 import cors from "cors";
 import { JSONFilePreset } from "lowdb/node";
 
-const namesData = { names: [] };
+const femaleNamesData = { names: [] };
+const maleNamesData = { names: [] };
+const nonbinNamesData = { names: [] };
 const lastNamesData = { last_names: [] };
 const levelsData = { levels: [] };
 const classesData = { classes: [] };
@@ -12,7 +14,9 @@ const ancestriesData = {
   ancestriesRare: [],
 };
 
-const dbNames = await JSONFilePreset("appdbs/namesdb.json", namesData);
+const dbFemaleNames = await JSONFilePreset("appdbs/femalenamesdb.json", femaleNamesData);
+const dbMaleNames = await JSONFilePreset("appdbs/malenamesdb.json", maleNamesData);
+const dbNonbinNames = await JSONFilePreset("appdbs/nonbinnamesdb.json", nonbinNamesData);
 const dbLastNames = await JSONFilePreset("appdbs/lastnamesdb.json", lastNamesData);
 const dbLevels = await JSONFilePreset("appdbs/levelsdb.json", levelsData);
 const dbClasses = await JSONFilePreset("appdbs/classesdb.json", classesData);
@@ -23,8 +27,18 @@ const port = 3000;
 
 app.use(cors());
 
-app.get("/names", (req, res) => {
-  const data = dbNames.data.names;
+app.get("/female-names", (req, res) => {
+  const data = dbFemaleNames.data.names;
+  return res.json(data);
+});
+
+app.get("/male-names", (req, res) => {
+  const data = dbMaleNames.data.names;
+  return res.json(data);
+});
+
+app.get("/nonbin-names", (req, res) => {
+  const data = dbNonbinNames.data.names;
   return res.json(data);
 });
 

@@ -1,27 +1,42 @@
 <div class="content">
-  @for (name of names; track $index){
+  @for (name of femaleNames; track $index){
   <h1>{{ name }}</h1>
-  } 
-  @for (lastname of lastnames; track $index){
+  } @for (lastname of lastnames; track $index){
   <h1>{{ lastname }}</h1>
   }
   <section class="user-input">
     <div class="user-input-col1">
       <div class="us-in-col1-el us-in-col1-one">
-        <div class="entry-type1">
-          <label class="user form-label" for="char-name">
-            Character name
-          </label>
-          <input type="text" id="char-name" />
-          <button class="green-button gen-name-button">
-            <span class="material-symbols-outlined gicon-btm"> autorenew </span>
-          </button>
+        <div class="entry-type1 char-name-row">
+          <div class="char-gen">
+            <label class="user form-label" for="char-name">
+              Character name
+            </label>
+            <input type="text" id="char-name" />
+            <button
+              (click)="generateCharName()"
+              class="green-button gen-name-button"
+            >
+              <span class="material-symbols-outlined gicon-btm"> autorenew </span>
+            </button>
+          </div>
+          <div class="radio-holder">
+            <label class="user form-label" for="gender">Gender: </label>
+            <input type="radio" name="gender" id="all" checked/>
+            <label class="user form-label" for="all">All</label>
+            <input type="radio" name="gender" id="female" />
+            <label class="user form-label" for="female">Female</label>
+            <input type="radio" name="gender" id="male" />
+            <label class="user form-label" for="male">Male</label>
+            <input type="radio" name="gender" id="nonbin" />
+            <label class="user form-label" for="nonbin">Non-binary</label>
+          </div>
         </div>
       </div>
       <div class="us-in-col1-el us-in-col1-two">
         <div class="entry-type1">
-          <label class="user form-label" for="char-name"> Level </label>
-          <select name="char-name" id="char-name" class="us-in-select">
+          <label class="user form-label" for="char-level"> Level </label>
+          <select name="char-level" id="char-level" class="us-in-select">
             <option value="default">----</option>
             <option *ngFor="let level of levels" [value]="level">
               {{ level }}
@@ -29,8 +44,8 @@
           </select>
         </div>
         <div class="entry-type1">
-          <label class="user form-label" for="char-name"> Class </label>
-          <select name="char-name" id="char-name" class="us-in-select">
+          <label class="user form-label" for="char-class"> Class </label>
+          <select name="char-class" id="char-class" class="us-in-select">
             <option value="default">----</option>
             <option *ngFor="let class of classes" [value]="class">
               {{ class }}
@@ -38,8 +53,8 @@
           </select>
         </div>
         <div class="entry-type1">
-          <label class="user form-label" for="char-name"> Ancestry </label>
-          <select name="char-name" id="char-name" class="us-in-select">
+          <label class="user form-label" for="char-ancestry"> Ancestry </label>
+          <select name="char-ancestry" id="char-ancestry" class="us-in-select">
             <option value="default">----</option>
             <option *ngFor="let ancestry of ancestries" [value]="ancestry">
               {{ ancestry }}
@@ -71,8 +86,8 @@
           />
         </div>
         <div class="entry-type1">
-          <label class="user form-label" for="char-name"> PC-style </label>
-          <input type="checkbox" name="char-name" id="char-name" />
+          <label class="user form-label" for="char-type"> PC-style </label>
+          <input type="checkbox" name="char-type" id="char-type" />
         </div>
       </div>
       <div class="us-in-col1-el us-in-col1-four">
