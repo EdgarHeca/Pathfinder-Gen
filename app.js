@@ -2,56 +2,59 @@ import express from "express";
 import cors from "cors";
 import { JSONFilePreset } from "lowdb/node";
 
-const defaultData = {
-  names: [],
-  last_names: [],
-  levels: [],
-  classes: [],
+const namesData = { names: [] };
+const lastNamesData = { last_names: [] };
+const levelsData = { levels: [] };
+const classesData = { classes: [] };
+const ancestriesData = {
   ancestriesComm: [],
   ancestriesUnco: [],
   ancestriesRare: [],
 };
-const db = await JSONFilePreset("db.json", defaultData);
+
+const dbNames = await JSONFilePreset("appdbs/namesdb.json", namesData);
+const dbLastNames = await JSONFilePreset("appdbs/lastnamesdb.json", lastNamesData);
+const dbLevels = await JSONFilePreset("appdbs/levelsdb.json", levelsData);
+const dbClasses = await JSONFilePreset("appdbs/classesdb.json", classesData);
+const dbAncestries = await JSONFilePreset("appdbs/ancestriesdb.json", ancestriesData);
 
 const app = express();
 const port = 3000;
 
 app.use(cors());
 
-await db.write();
-
 app.get("/names", (req, res) => {
-  const data = db.data.names;
+  const data = dbNames.data.names;
   return res.json(data);
 });
 
 app.get("/lastnames", (req, res) => {
-  const data = db.data.last_names;
+  const data = dbLastNames.data.last_names;
   return res.json(data);
 });
 
 app.get("/levels", (req, res) => {
-  const data = db.data.levels;
+  const data = dbLevels.data.levels;
   return res.json(data);
 });
 
 app.get("/classes", (req, res) => {
-  const data = db.data.classes;
+  const data = dbClasses.data.classes;
   return res.json(data);
 });
 
 app.get("/ancestriescomm", (req, res) => {
-  const data = db.data.ancestriesComm;
+  const data = dbAncestries.data.ancestriesComm;
   return res.json(data);
 });
 
 app.get("/ancestriesunco", (req, res) => {
-  const data = db.data.ancestriesUnco;
+  const data = dbAncestries.data.ancestriesUnco;
   return res.json(data);
 });
 
 app.get("/ancestriesrare", (req, res) => {
-  const data = db.data.ancestriesRare;
+  const data = dbAncestries.data.ancestriesRare;
   return res.json(data);
 });
 

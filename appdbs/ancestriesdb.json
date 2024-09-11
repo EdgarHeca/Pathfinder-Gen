@@ -1,0 +1,50 @@
+{
+  "ancestriesComm": [
+    "Dwarf",
+    "Elf",
+    "Gnome",
+    "Goblin",
+    "Halfling",
+    "Human",
+    "Leshy",
+    "Orc"
+  ],
+  "ancestriesUnco": [
+    "Athamaru",
+    "Azarketi",
+    "Catfolk",
+    "Centaur",
+    "Fetchling",
+    "Gnoll",
+    "Grippli",
+    "Hobgoblin",
+    "Kitsune",
+    "Kobold",
+    "Lizardfolk",
+    "Merfolk",
+    "Minotaur",
+    "Nagaji",
+    "Ratfolk",
+    "Tengu",
+    "Vanara"
+  ],
+  "ancestriesRare": [
+    "Anadi",
+    "Android",
+    "Automaton",
+    "Awakened Animal",
+    "Conrasu",
+    "Fleshwarp",
+    "Ghoran",
+    "Goloma",
+    "Kashrishi",
+    "Poppet",
+    "Shisk",
+    "Shoony",
+    "Skeleton",
+    "Sprite",
+    "Strix",
+    "Surki",
+    "Vishkanya"
+  ]
+}
