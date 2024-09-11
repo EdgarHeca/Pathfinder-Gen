@@ -67,7 +67,6 @@ export class UserInputComponent implements OnInit {
     this.apiService.getRareAncest().subscribe((data) => {
       this.ancestriesRare = data;
     });
-
   }
 
   //Update ancestry list if Uncommon is checked
@@ -102,38 +101,77 @@ export class UserInputComponent implements OnInit {
 
   //Generate Character name when button is clicked
   generateCharName() {
-    if(!Array.isArray(this.allNames) || !this.allNames.length){
+    if (!Array.isArray(this.allNames) || !this.allNames.length) {
       this.fillAllNames();
     }
 
     //Get from all names & last names
     if ((<HTMLInputElement>document.getElementById('all')).checked) {
-      var name = this.allNames[Math.floor(Math.random() * this.allNames.length)];
-      var lastname = this.lastnames[Math.floor(Math.random() * this.lastnames.length)];
+      var name =
+        this.allNames[Math.floor(Math.random() * this.allNames.length)];
+      var lastname =
+        this.lastnames[Math.floor(Math.random() * this.lastnames.length)];
 
-      (<HTMLInputElement>document.getElementById('char-name')).setAttribute("value", name + " " + lastname);
+      (<HTMLInputElement>document.getElementById('char-name')).value =
+        name + ' ' + lastname;
     }
     //Get from female names & last names
     if ((<HTMLInputElement>document.getElementById('female')).checked) {
-      var name = this.femaleNames[Math.floor(Math.random() * this.femaleNames.length)] as any;
-      var lastname = this.lastnames[Math.floor(Math.random() * this.lastnames.length)];
+      var name = this.femaleNames[
+        Math.floor(Math.random() * this.femaleNames.length)
+      ] as any;
+      var lastname =
+        this.lastnames[Math.floor(Math.random() * this.lastnames.length)];
 
-      (<HTMLInputElement>document.getElementById('char-name')).setAttribute("value", name + " " + lastname);
+      (<HTMLInputElement>document.getElementById('char-name')).value =
+        name + ' ' + lastname;
     }
     //Get from male names & last names
     if ((<HTMLInputElement>document.getElementById('male')).checked) {
-      var name = this.maleNames[Math.floor(Math.random() * this.maleNames.length)] as any;
-      var lastname = this.lastnames[Math.floor(Math.random() * this.lastnames.length)];
+      var name = this.maleNames[
+        Math.floor(Math.random() * this.maleNames.length)
+      ] as any;
+      var lastname =
+        this.lastnames[Math.floor(Math.random() * this.lastnames.length)];
 
-      (<HTMLInputElement>document.getElementById('char-name')).setAttribute("value", name + " " + lastname);
+      (<HTMLInputElement>document.getElementById('char-name')).value =
+        name + ' ' + lastname;
     }
     //Get from non-binary names & last names
     if ((<HTMLInputElement>document.getElementById('nonbin')).checked) {
-      var name = this.nonbinNames[Math.floor(Math.random() * this.nonbinNames.length)] as any;
-      var lastname = this.lastnames[Math.floor(Math.random() * this.lastnames.length)];
+      var name = this.nonbinNames[
+        Math.floor(Math.random() * this.nonbinNames.length)
+      ] as any;
+      var lastname =
+        this.lastnames[Math.floor(Math.random() * this.lastnames.length)];
 
-      (<HTMLInputElement>document.getElementById('char-name')).setAttribute("value", name + " " + lastname);
+      (<HTMLInputElement>document.getElementById('char-name')).value =
+        name + ' ' + lastname;
     }
+  }
+
+  generateCharacter() {
+    let charName = (<HTMLInputElement>document.getElementById('char-name'))
+      .value;
+    let charLevel = (<HTMLInputElement>document.getElementById('char-level'))
+      .value;
+
+    if (
+      charName === null ||
+      charName.length === 0 ||
+      !charName ||
+      charName.replace(/\s/g, '') == ''
+    ) {
+    }
+    
+    this.generateCharName();
+    this.generateLevel();
+    this.generateClass();
+    this.generateAncestry();
+
+    var name = this.nonbinNames[
+      Math.floor(Math.random() * this.nonbinNames.length)
+    ] as any;
   }
 
   printArray() {
@@ -143,11 +181,45 @@ export class UserInputComponent implements OnInit {
     console.log(this.ancestriesRare);
   }
 
-  fillAllNames(){
+  fillAllNames() {
     this.allNames = this.femaleNames.concat(this.maleNames, this.nonbinNames);
-    console.log("Fill all names" , this.femaleNames, this.maleNames, this.nonbinNames, this.allNames);
+    console.log(
+      'Fill all names',
+      this.femaleNames,
+      this.maleNames,
+      this.nonbinNames,
+      this.allNames
+    );
   }
 
-  constructor() {
+  generateLevel() {
+    var level = this.levels[Math.floor(Math.random() * this.levels.length)];
+
+    console.log(level);
+
+    (<HTMLInputElement>document.getElementById('char-level')).value =
+      level as any;
   }
+
+  generateClass() {
+    var charClass =
+      this.classes[Math.floor(Math.random() * this.classes.length)];
+
+    console.log(charClass);
+
+    (<HTMLInputElement>document.getElementById('char-class')).value =
+      charClass as any;
+  }
+
+  generateAncestry() {
+    var ancestry =
+      this.ancestries[Math.floor(Math.random() * this.ancestries.length)];
+
+    console.log(ancestry);
+
+    (<HTMLInputElement>document.getElementById('char-ancestry')).value =
+    ancestry as any;
+  }
+
+  constructor() {}
 }

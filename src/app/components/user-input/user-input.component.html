@@ -1,9 +1,4 @@
 <div class="content">
-  @for (name of femaleNames; track $index){
-  <h1>{{ name }}</h1>
-  } @for (lastname of lastnames; track $index){
-  <h1>{{ lastname }}</h1>
-  }
   <section class="user-input">
     <div class="user-input-col1">
       <div class="us-in-col1-el us-in-col1-one">
@@ -12,7 +7,7 @@
             <label class="user form-label" for="char-name">
               Character name
             </label>
-            <input type="text" id="char-name" />
+            <input type="text" id="char-name" name="char-name"/>
             <button
               (click)="generateCharName()"
               class="green-button gen-name-button"
@@ -91,7 +86,7 @@
         </div>
       </div>
       <div class="us-in-col1-el us-in-col1-four">
-        <button (click)="printArray()" class="green-button gen-button">
+        <button (click)="generateCharacter()" class="green-button gen-button">
           Generate
         </button>
       </div>
